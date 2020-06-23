@@ -1,0 +1,29 @@
+{
+	"short_name": "Notated",
+	"name": "Notated",
+	"version": "1.1",
+	"author": "Rafael Heard",
+	"manifest_version": 2,
+	"background": {
+    "scripts": ["app/background.js"],
+    "persistent": true
+	},
+	"browser_action": {},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"css": ["/css/root.css"],
+			"js": ["/static/js/content.js"]
+		}
+	],
+	"permissions": [
+		"storage",
+		"activeTab",
+		"declarativeContent",
+		"tabs",
+		"https://*/*",
+		"http://*/*"
+	],
+	"web_accessible_resources": ["/static/css/content.css", "/static/media/*"],
+	"content_security_policy": "script-src 'self' 'sha256-GgRxrVOKNdB4LrRsVPDSbzvfdV4UqglmviH9GoBJ5jk='; object-src 'self'"
+}
