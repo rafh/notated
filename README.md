@@ -2,7 +2,7 @@
 
 Once the extension has been enabled, click the `N` found in the extension bar. You can now annotate words within the page.
 
-<img src="https://i.ibb.co/qBr3XQW/notated.gif" alt="notated">
+<img src="https://rb.gy/unuu3z" alt="notated">
 
 ## Default Controls
 Shift + Click - highlights word as if marked by a highlighter.
