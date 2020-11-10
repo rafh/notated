@@ -3,22 +3,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Frame, { FrameContextConsumer } from 'react-frame-component';
-import App from './App';
 import './content.css';
-
 
 class Main extends React.Component {
 	render() {
-
-		chrome.runtime.onMessage.addListener(function (a, b, sendResponse) {
-			// console.log(chrome)
-			// chrome.windows.getCurrent(function (currentWindow) {
-			// 	chrome.tabs.query({active: true, windowId: currentWindow.id}, function(activeTabs) {
-			// 		// inject content_script to current tab
-			// 		chrome.tabs.executeScript(activeTabs[0].id, {file: 'content_script.js', allFrames: false});
-			// 	});
-			// });
-		});
 		return (
 			<Frame
 				head={[
@@ -29,20 +17,15 @@ class Main extends React.Component {
 					></link>,
 				]}
 			>
-				<FrameContextConsumer>
+			{/* // Uncomment to allow callbacks */}
+				{/* <FrameContextConsumer>
 					{
 						// Callback is invoked with iframe's window and document instances
 						({ document, window }) => {
 							chrome.runtime.onMessage.addListener(function (
 								request,
-								sender,
 								sendResponse,
-								a,
 							) {
-
-									console.log({request})
-									console.log({sender})
-									console.log({sendResponse})
 								if (request.command === 'init') {
 
 								} else {
@@ -59,7 +42,7 @@ class Main extends React.Component {
 							);
 						}
 					}
-				</FrameContextConsumer>
+				</FrameContextConsumer> */}
 			</Frame>
 		);
 	}
@@ -75,7 +58,7 @@ app.style.display = 'none';
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 	if (request.message === 'clicked_browser_action') {
-		toggle();
+		// toggle();
 	}
 });
 

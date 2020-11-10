@@ -10,8 +10,6 @@ const removeMarking = (event, elmClass, location) => {
 	location === 'next' && currentElm.nextElementSibling.remove()
 }
 
-const markPageAsNotated = () => {}
-
 const highlightWord = (event) => {
 	event.preventDefault()
 	let currentElm = event.target
@@ -42,19 +40,19 @@ const highlightWord = (event) => {
 		annotation = annotate(currentElm, {
 			type: 'highlight',
 			padding: [2, 2],
-			color: '#679267',
+			color: '#FFC107',
 		})
 		elmClassList.add('is-marked', 'is-highlighted')
 	} else if (event.altKey) {
 		annotation = annotate(currentElm, {
-			type: 'underline',
+			type: 'strike-through',
 			color: '#f44336',
 		})
 		elmClassList.add('is-marked', 'is-underlined')
 	} else if (event.metaKey || event.ctrlKey) {
 		annotation = annotate(currentElm, {
 			type: 'underline',
-			color: '#f57f17',
+			color: '#679267',
 		})
 		elmClassList.add('is-marked', 'is-crossed')
 	} else {
